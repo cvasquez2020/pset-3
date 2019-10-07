@@ -47,10 +47,27 @@ public class ProblemSet3 {
      * 
      * Prompt the user to enter an integer. Is it positive, negative, or zero?
      */
-    
+	
     public void sign() {
 
+	System.out.println("Enter a number");
+
+	int number = in.nextInt();
+
+	if (number > 0 ) {
+		
+		System.out.println("Positive");
+	
+	} else if (number < 0) {
+		
+		System.out.println("Negative.");
+
+	} else ()
+	
+		System.out.println("Zero.")
+
     }
+
     
     /*
      * Exercise 2.
@@ -59,7 +76,7 @@ public class ProblemSet3 {
      */
     
     public void parity() {
-
+	
     }
     
     /*
