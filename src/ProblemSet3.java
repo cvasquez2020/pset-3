@@ -28,7 +28,7 @@ public class ProblemSet3 {
         
         // comment out or uncomment as needed
         
-        ps.sign();          // executes Exercise 1
+  	ps.sign();          // executes Exercise 1
         ps.parity();        // executes Exercise 2
         ps.ordered();       // executes Exercise 3
         ps.gpa();           // executes Exercise 4
@@ -50,25 +50,29 @@ public class ProblemSet3 {
 	
     public void sign() {
 
-	System.out.println("Enter a number");
+	System.out.print("\n");
 
+	System.out.print("Enter an integer: ");
 	int number = in.nextInt();
+
+	System.out.print("\n");
 
 	if (number > 0 ) {
 		
-		System.out.println("Positive");
+		System.out.println("Positive.");
 	
 	} else if (number < 0) {
 		
 		System.out.println("Negative.");
 
-	} else ()
+	} else {
 	
-		System.out.println("Zero.")
+		System.out.println("Zero.");
 
     }
 
-    
+    }
+
     /*
      * Exercise 2.
      * 
@@ -76,7 +80,23 @@ public class ProblemSet3 {
      */
     
     public void parity() {
+
+	System.out.print("\n");
+
+	System.out.print("Enter an integer: ");
+	int number = in.nextInt();
+
+	System.out.print("\n");
+
+	if (number%2 == 1 || number%2 == -1) {
+		
+		System.out.print("Odd");
 	
+	} else if (number%2 == 0) {
+		
+		System.out.print("Even.");
+
+	} 
     }
     
     /*
