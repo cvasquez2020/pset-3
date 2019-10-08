@@ -87,8 +87,8 @@ public class ProblemSet3 {
 	int number = in.nextInt();
 
 	System.out.print("\n");
-
-	if (number%2 == 1 || number%2 == -1) {
+	
+	if (Math.abs(number%2) == 1) {
 		
 		System.out.print("Odd");
 	
@@ -97,6 +97,8 @@ public class ProblemSet3 {
 		System.out.print("Even.");
 
 	} 
+
+	System.out.print("\n");
     }
     
     /*
