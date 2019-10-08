@@ -90,7 +90,7 @@ public class ProblemSet3 {
 	
 	if (Math.abs(number%2) == 1) {
 		
-		System.out.print("Odd");
+		System.out.print("Odd.");
 	
 	} else if (number%2 == 0) {
 		
@@ -109,6 +109,30 @@ public class ProblemSet3 {
     
     public void ordered() {
 
+	System.out.print("Enter three integers.");
+	System.out.print("\n");
+
+	System.out.print("Enter integer: ");
+	int firstInteger = in.nextInt();
+	
+	System.out.print("Enter integer: ");
+	int secondInteger = in.nextInt();
+
+	System.out.print("Enter integer: ");
+	int thirdInteger = in.nextInt();
+
+	String order;
+	
+	if (firstInteger >= secondInteger >= thirdInteger){
+	order = "Decreasing ";
+	}
+	
+	if (firstInteger > secondInteger && secondInteger > thirdInteger){
+
+	order = "Strictly "+order;
+	}
+	
+	
     }
     
     /*
