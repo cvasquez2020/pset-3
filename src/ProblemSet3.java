@@ -109,12 +109,14 @@ public class ProblemSet3 {
     
     public void ordered() {
 
-	System.out.print("Enter three integers.");
+	System.out.print("\n");
+
+	System.out.println("Enter three integers.");
 	System.out.print("\n");
 
 	System.out.print("Enter integer: ");
 	int firstInteger = in.nextInt();
-	
+
 	System.out.print("Enter integer: ");
 	int secondInteger = in.nextInt();
 
@@ -123,16 +125,33 @@ public class ProblemSet3 {
 
 	String order;
 	
-	if (firstInteger >= secondInteger >= thirdInteger){
-	order = "Decreasing ";
-	}
-	
 	if (firstInteger > secondInteger && secondInteger > thirdInteger){
 
-	order = "Strictly "+order;
+	order = "Strictly Decreasing.";
+
+	} else if (firstInteger < secondInteger && secondInteger < thirdInteger){
+
+	order = "Stricly Increasing.";
+
+	} else if ((firstInteger > secondInteger && secondInteger >= thirdInteger) 	
+	|| (firstInteger >= secondInteger && secondInteger > thirdInteger) ){
+	
+	order = "Decreasing.";
+
+	} else if ((firstInteger < secondInteger && secondInteger <= thirdInteger) 	
+	|| (firstInteger <= secondInteger && secondInteger < thirdInteger) ){
+	
+	order = "Increasing.";
+	
+	} else {
+
+	order = "Unordered.";
+
 	}
 	
-	
+	System.out.print("\n");
+	System.out.print(order);
+	System.out.print("\n");
     }
     
     /*
