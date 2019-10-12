@@ -232,6 +232,7 @@ public class ProblemSet3 {
 
     System.out.print("Your GPA is: ");
     System.out.printf("%.2f", gpa);
+    System.out.print(".");
 
   } else {
 
