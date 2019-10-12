@@ -252,6 +252,65 @@ public class ProblemSet3 {
 
  public void grade() {
 
+    boolean validGrade = true;
+    String letterGrade = "";
+    int A_THRESHOLD = 90;
+    int B_THRESHOLD = 80;
+    int C_THRESHOLD = 70;
+    int D_THRESHOLD = 60;
+    int F_THRESHOLD = 0;
+    String article = "a";
+
+
+    System.out.print("\n");
+    System.out.print("Enter a grade: ");
+    Double numberGrade = in .nextDouble();
+    System.out.print("\n");
+
+    if (100.0 < numberGrade || numberGrade < 0) {
+
+      validGrade = false;
+
+    } else if (A_THRESHOLD <= numberGrade) {
+
+      letterGrade = "A";
+      article += "n";
+
+    } else if (B_THRESHOLD <= numberGrade) {
+
+      letterGrade = "B";
+
+    } else if (C_THRESHOLD <= numberGrade) {
+
+      letterGrade = "C";
+
+    } else if (D_THRESHOLD <= numberGrade) {
+
+      letterGrade = "D";
+
+    } else if (F_THRESHOLD <= numberGrade) {
+
+      letterGrade = "F";
+      article += "n";
+
+    }
+
+    if (validGrade) {
+
+      System.out.print("You received "+article+" "+letterGrade+".");
+
+    } else if (numberGrade < 0) {
+
+        System.out.print("Grades below 0 are invalid.");
+
+    } else {
+
+      System.out.print("Grades above 100 are invalid.");
+
+    }
+
+    System.out.print("\n");
+
  }
 
  /*
