@@ -1,18 +1,18 @@
 /**
  * Problem Set 3.
- * 
+ *
  * It's time to put your skills to the test. This problem set focuses on using
  * conditional control structures. It's also your first introduction to methods,
  * so things look a little different. The main method is done for you. Lines 31-40
  * trigger each of the predefined methods, which you can think of as self-contained
  * executable pieces of logic. Write your code for each exercise in the
  * corresponding method.
- * 
+ *
  * The specifications for each exercise are outlined below. Your job is to write
  * lines of code to produce answers to my questions. Each exercise requires that
  * you ask the user to enter one or more values. Your code must meet the
  * requirements set forth in this section (as well as the Deliverables section).
- * 
+ *
  * Work through these exercises on your own. Experiment, make mistakes, ask
  * questions, and fix your mistakes. It's the only way to get good at programming.
  */
@@ -20,208 +20,251 @@
 import java.util.Scanner;
 
 public class ProblemSet3 {
-    
-    private static Scanner in = new Scanner(System.in);
-    
-    public static void main(String[] args) {
-        ProblemSet3 ps = new ProblemSet3();
-        
-        // comment out or uncomment as needed
-        
-  	ps.sign();          // executes Exercise 1
-        ps.parity();        // executes Exercise 2
-        ps.ordered();       // executes Exercise 3
-        ps.gpa();           // executes Exercise 4
-        ps.grade();         // executes Exercise 5
-        ps.cards();         // executes Exercise 6
-        ps.leapYear();      // executes Exercise 7
-        ps.state();         // executes Exercise 8
-        ps.months();        // executes Exercise 9
-        ps.salary();        // executes Exercise 10
-        
-        in.close();
-    }
-    
-    /*
-     * Exercise 1.
-     * 
-     * Prompt the user to enter an integer. Is it positive, negative, or zero?
-     */
-	
-    public void sign() {
 
-	System.out.print("\n");
+ private static Scanner in = new Scanner(System.in);
 
-	System.out.print("Enter an integer: ");
-	int number = in.nextInt();
+ public static void main(String[] args) {
+  ProblemSet3 ps = new ProblemSet3();
 
-	System.out.print("\n");
+  // comment out or uncomment as needed
 
-	if (number > 0 ) {
-		
-		System.out.println("Positive.");
-	
-	} else if (number < 0) {
-		
-		System.out.println("Negative.");
+  ps.sign(); // executes Exercise 1
+  ps.parity(); // executes Exercise 2
+  ps.ordered(); // executes Exercise 3
+  ps.gpa(); // executes Exercise 4
+  ps.grade(); // executes Exercise 5
+  ps.cards(); // executes Exercise 6
+  ps.leapYear(); // executes Exercise 7
+  ps.state(); // executes Exercise 8
+  ps.months(); // executes Exercise 9
+  ps.salary(); // executes Exercise 10
 
-	} else {
-	
-		System.out.println("Zero.");
+  in .close();
+ }
 
-    }
+ /*
+  * Exercise 1.
+  *
+  * Prompt the user to enter an integer. Is it positive, negative, or zero?
+  */
 
-    }
+ public void sign() {
 
-    /*
-     * Exercise 2.
-     * 
-     * Prompt the user to enter an integer. Is it even or odd?
-     */
-    
-    public void parity() {
+  System.out.print("\n");
 
-	System.out.print("\n");
+  System.out.print("Enter an integer: ");
+  int number = in .nextInt();
 
-	System.out.print("Enter an integer: ");
-	int number = in.nextInt();
+  System.out.print("\n");
 
-	System.out.print("\n");
-	
-	if (Math.abs(number%2) == 1) {
-		
-		System.out.print("Odd.");
-	
-	} else if (number%2 == 0) {
-		
-		System.out.print("Even.");
+  if (number > 0) {
 
-	} 
+   System.out.println("Positive.");
 
-	System.out.print("\n");
-    }
-    
-    /*
-     * Exercise 3.
-     * 
-     * Prompt the user to enter three integers. How are the integers ordered?
-     */
-    
-    public void ordered() {
+  } else if (number < 0) {
 
-	System.out.print("\n");
+   System.out.println("Negative.");
 
-	System.out.println("Enter three integers.");
-	System.out.print("\n");
+  } else {
 
-	System.out.print("Enter integer: ");
-	int firstInteger = in.nextInt();
+   System.out.println("Zero.");
 
-	System.out.print("Enter integer: ");
-	int secondInteger = in.nextInt();
+  }
 
-	System.out.print("Enter integer: ");
-	int thirdInteger = in.nextInt();
+ }
 
-	String order;
-	
-	if (firstInteger > secondInteger && secondInteger > thirdInteger){
+ /*
+  * Exercise 2.
+  *
+  * Prompt the user to enter an integer. Is it even or odd?
+  */
 
-	order = "Strictly Decreasing.";
+ public void parity() {
 
-	} else if (firstInteger < secondInteger && secondInteger < thirdInteger){
+  System.out.print("\n");
 
-	order = "Stricly Increasing.";
+  System.out.print("Enter an integer: ");
+  int number = in .nextInt();
 
-	} else if ((firstInteger > secondInteger && secondInteger >= thirdInteger) 	
-	|| (firstInteger >= secondInteger && secondInteger > thirdInteger) ){
-	
-	order = "Decreasing.";
+  System.out.print("\n");
 
-	} else if ((firstInteger < secondInteger && secondInteger <= thirdInteger) 	
-	|| (firstInteger <= secondInteger && secondInteger < thirdInteger) ){
-	
-	order = "Increasing.";
-	
-	} else {
+  if (Math.abs(number % 2) == 1) {
 
-	order = "Unordered.";
+   System.out.print("Odd.");
 
-	}
-	
-	System.out.print("\n");
-	System.out.print(order);
-	System.out.print("\n");
-    }
-    
-    /*
-     * Exercise 4.
-     * 
-     * Prompt the user to enter a letter grade. What's the corresponding GPA?
-     */
-    
-    public void gpa() {
+  } else if (number % 2 == 0) {
 
-    }
-    
-    /*
-     * Exercise 5.
-     * 
-     * Prompt the user to enter a grade. What's the corresponding letter grade?
-     */
-    
-    public void grade() {
+   System.out.print("Even.");
 
-    }
-    
-    /*
-     * Exercise 6.
-     * 
-     * Prompt the user to enter a playing card. What card was entered?
-     */
-    
-    public void cards() {
+  }
 
-    }
-    
-    /*
-     * Exercise 7.
-     * 
-     * Prompt the user to enter a year. Is it a leap year or not?
-     */
-    
-    public void leapYear() {
+  System.out.print("\n");
+ }
 
-    }
-    
-    /*
-     * Exercise 8.
-     * 
-     * Prompt the user to enter a temperature. At that temperature, is water a solid,
-     * liquid, or gas?
-     */
-    
-    public void state() {
+ /*
+  * Exercise 3.
+  *
+  * Prompt the user to enter three integers. How are the integers ordered?
+  */
 
-    }
-    
-    /*
-     * Exercise 9.
-     * 
-     * Prompt the user to enter a month. How many days are in that month?
-     */
-    
-    public void months() {        
+ public void ordered() {
 
-    }
-    
-    /*
-     * Exercise 10.
-     * 
-     * Prompt the user to enter a wage and hours worked. How much money will be made?
-     */
-    
-    public void salary() {
+  System.out.print("\n");
 
-    }
+  System.out.println("Enter three integers.");
+  System.out.print("\n");
+
+  System.out.print("Enter integer: ");
+  int firstInteger = in .nextInt();
+
+  System.out.print("Enter integer: ");
+  int secondInteger = in .nextInt();
+
+  System.out.print("Enter integer: ");
+  int thirdInteger = in .nextInt();
+
+  String order;
+
+  if (firstInteger > secondInteger && secondInteger > thirdInteger) {
+
+   order = "Strictly Decreasing.";
+
+  } else if (firstInteger < secondInteger && secondInteger < thirdInteger) {
+
+   order = "Stricly Increasing.";
+
+  } else if ((firstInteger > secondInteger && secondInteger >= thirdInteger) ||
+   (firstInteger >= secondInteger && secondInteger > thirdInteger)) {
+
+   order = "Decreasing.";
+
+  } else if ((firstInteger < secondInteger && secondInteger <= thirdInteger) ||
+   (firstInteger <= secondInteger && secondInteger < thirdInteger)) {
+
+   order = "Increasing.";
+
+  } else {
+
+   order = "Unordered.";
+
+  }
+
+  System.out.print("\n");
+  System.out.print(order);
+  System.out.print("\n");
+ }
+
+ /*
+  * Exercise 4.
+  *
+  * Prompt the user to enter a letter grade. What's the corresponding GPA?
+  */
+
+ public void gpa() {
+
+  double A_GRADE = 4.00;
+  double B_GRADE = 3.00;
+  double C_GRADE = 2.00;
+  double D_GRADE = 1.00;
+  double F_GRADE = 0.00;
+
+  System.out.print("Enter a letter grade: ");
+  String letterGrade = in .next();
+
+  String letter = letterGrade.substring(0);
+  double gpa;
+  boolean validGrade = true;
+
+  if (letter == "A") {
+
+    gpa = A_GRADE;
+
+  } else if (letter == "B") {
+
+    gpa = B_GRADE;
+
+  } else if (letter == "C") {
+
+    gpa = C_GRADE;
+
+  } else if (letter == "D") {
+
+    gpa = D_GRADE;
+
+  } else if (letter == "F") {
+
+    gpa = F_GRADE;
+
+  } else {
+
+    System.out.println("That's not a valid letter grade.");
+    valideGrade = false;
+
+  }
+
+  if ()
+
+
+ }
+
+ /*
+  * Exercise 5.
+  *
+  * Prompt the user to enter a grade. What's the corresponding letter grade?
+  */
+
+ public void grade() {
+
+ }
+
+ /*
+  * Exercise 6.
+  *
+  * Prompt the user to enter a playing card. What card was entered?
+  */
+
+ public void cards() {
+
+ }
+
+ /*
+  * Exercise 7.
+  *
+  * Prompt the user to enter a year. Is it a leap year or not?
+  */
+
+ public void leapYear() {
+
+ }
+
+ /*
+  * Exercise 8.
+  *
+  * Prompt the user to enter a temperature. At that temperature, is water a solid,
+  * liquid, or gas?
+  */
+
+ public void state() {
+
+ }
+
+ /*
+  * Exercise 9.
+  *
+  * Prompt the user to enter a month. How many days are in that month?
+  */
+
+ public void months() {
+
+ }
+
+ /*
+  * Exercise 10.
+  *
+  * Prompt the user to enter a wage and hours worked. How much money will be made?
+  */
+
+ public void salary() {
+
+ }
 }
