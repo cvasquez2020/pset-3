@@ -168,42 +168,78 @@ public class ProblemSet3 {
   double D_GRADE = 1.00;
   double F_GRADE = 0.00;
 
+  System.out.print("\n");
   System.out.print("Enter a letter grade: ");
   String letterGrade = in .next();
+  in.nextLine();
+  System.out.print("\n");
 
-  String letter = letterGrade.substring(0);
-  double gpa;
+  String letter = letterGrade.substring(0,1);
+  double gpa = 0;
   boolean validGrade = true;
+  double GPA_DECIMAL = 0.33;
 
-  if (letter == "A") {
+  if (letter.equals("A")) {
 
     gpa = A_GRADE;
 
-  } else if (letter == "B") {
+  } else if (letter.equals("B")) {
 
     gpa = B_GRADE;
 
-  } else if (letter == "C") {
+  } else if (letter.equals("C")) {
 
     gpa = C_GRADE;
 
-  } else if (letter == "D") {
+  } else if (letter.equals("D")) {
 
     gpa = D_GRADE;
 
-  } else if (letter == "F") {
+  } else if (letter.equals("F")) {
 
     gpa = F_GRADE;
 
   } else {
 
-    System.out.println("That's not a valid letter grade.");
-    valideGrade = false;
+    validGrade = false;
 
   }
 
-  if ()
+  if (letterGrade.substring(1).equals("+") && !(letter.equals("F")) &&
+   !(letterGrade.equals("A+"))) {
 
+    gpa += GPA_DECIMAL;
+
+  } else if (letterGrade.substring(1).equals("-") && !(letter.equals("F"))) {
+
+    gpa -= GPA_DECIMAL;
+
+  } else {
+
+    gpa = gpa;
+
+  }
+
+  if ( !(letterGrade.equals(letter + "+") || letterGrade.equals(letter + "-") ||
+   letterGrade.equals(letter)) || (letterGrade.equals("F+") ||
+   letterGrade.equals("F-"))) {
+
+    validGrade = false;
+
+  }
+
+  if (validGrade) {
+
+    System.out.print("Your GPA is: ");
+    System.out.printf("%.2f", gpa);
+
+  } else {
+
+    System.out.println("That's not a valid letter grade.");
+
+  }
+
+  System.out.print("\n");
 
  }
 
