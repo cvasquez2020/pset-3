@@ -414,6 +414,22 @@ public class ProblemSet3 {
 
  public void leapYear() {
 
+    System.out.print("\n");
+    System.out.print("Enter a year: ");
+    int year = in .nextInt();
+
+    boolean leapYear = year%4 == 0 && (year%100 != 0 || year%400 == 0);
+
+    System.out.print("\n");
+
+    if (leapYear) {
+      System.out.print(year+" is a leap year.");
+    } else {
+      System.out.print(year+" is not a leap year.");
+    }
+
+    System.out.print("\n");
+
  }
 
  /*
