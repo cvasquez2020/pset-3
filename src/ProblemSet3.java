@@ -236,7 +236,7 @@ public class ProblemSet3 {
 
   } else {
 
-    System.out.println("That's not a valid letter grade.");
+    System.out.print("That's not a valid letter grade.");
 
   }
 
@@ -320,6 +320,89 @@ public class ProblemSet3 {
   */
 
  public void cards() {
+
+    System.out.print("\n");
+    System.out.print("Enter a card: ");
+    String shortRankSuit = in .next();
+
+    boolean validRank = true;
+    boolean validSuit = true;
+    String rank = "";
+    String suit = "";
+    String shortRank = shortRankSuit.substring(0,1).toUpperCase();
+    String shortSuit = shortRankSuit.substring(1).toUpperCase();
+
+    switch (shortRank){
+      case "A":
+        rank = "Ace";
+        break;
+      case "2":
+        rank = "Two";
+        break;
+      case "3":
+        rank = "Three";
+        break;
+      case "4":
+        rank = "Four";
+        break;
+      case "5":
+        rank = "Five";
+        break;
+      case "6":
+        rank = "Six";
+        break;
+      case "7":
+        rank = "Seven";
+        break;
+      case "8":
+        rank = "Eight";
+        break;
+      case "9":
+        rank = "Nine";
+        break;
+      case "J":
+        rank = "Jack";
+        break;
+      case "Q":
+        rank = "Queen";
+        break;
+      case "K":
+        rank = "King";
+        break;
+      default:
+        validRank = false;
+        break;
+    }
+
+    switch (shortSuit){
+      case "C":
+        suit = "Clubs";
+        break;
+      case "D":
+        suit = "Diamonds";
+        break;
+      case "H":
+        suit = "Hearts";
+        break;
+      case "S":
+        suit = "Spades";
+        break;
+      default:
+        validSuit = false;
+        break;
+    }
+
+    System.out.print("\n");
+
+    if (validSuit && validRank) {
+      System.out.print(rank+" of "+suit+".");
+    } else if (!(validRank)) {
+      System.out.print("That's not a valid rank.");
+    } else {
+      System.out.print("That's not a valid suit.");
+    }
+
+    System.out.print("\n");
 
  }
 
