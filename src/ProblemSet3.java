@@ -1,4 +1,4 @@
-/**
+ /**
  * Problem Set 3.
  *
  * It's time to put your skills to the test. This problem set focuses on using
@@ -174,7 +174,7 @@ public class ProblemSet3 {
   in.nextLine();
   System.out.print("\n");
 
-  String letter = letterGrade.substring(0,1);
+  String letter = letterGrade.substring(0,1).toUpperCase();
   double gpa = 0;
   boolean validGrade = true;
   double GPA_DECIMAL = 0.33;
@@ -221,7 +221,7 @@ public class ProblemSet3 {
   }
 
   if ( !(letterGrade.equals(letter + "+") || letterGrade.equals(letter + "-") ||
-   letterGrade.equals(letter)) || (letterGrade.equals("F+") ||
+   letterGrade.toUpperCase().equals(letter)) || (letterGrade.equals("F+") ||
    letterGrade.equals("F-"))) {
 
     validGrade = false;
@@ -230,7 +230,7 @@ public class ProblemSet3 {
 
   if (validGrade) {
 
-    System.out.print("Your GPA is: ");
+    System.out.print("Your GPA is ");
     System.out.printf("%.2f", gpa);
     System.out.print(".");
 
@@ -266,6 +266,7 @@ public class ProblemSet3 {
     System.out.print("Enter a grade: ");
     Double numberGrade = in .nextDouble();
     System.out.print("\n");
+
 
     if (100.0 < numberGrade || numberGrade < 0) {
 
@@ -441,6 +442,51 @@ public class ProblemSet3 {
 
  public void state() {
 
+    System.out.print("\n");
+
+    System.out.print("Enter a temperature: ");
+    double temperature = in .nextDouble();
+
+    System.out.print("Enter a scale: ");
+    String scale = in .next();
+
+    System.out.print("\n");
+
+    double tempMetric = 0;
+    boolean validScale;
+    String stateOfWater = "";
+    double MELTING_POINT = 0;
+    double BOILING_POINT = 100;
+
+    scale = scale.toUpperCase();
+
+    if (scale.equals("F")) {
+      tempMetric = (temperature-32)*5/9;
+      validScale = true;
+    } else if (scale.equals("C")) {
+      tempMetric = temperature;
+      validScale = true;
+    } else {
+      validScale = false;
+    }
+    if (validScale) {
+      if (tempMetric < MELTING_POINT) {
+        stateOfWater = "Solid";
+      } else if (tempMetric >= MELTING_POINT) {
+        stateOfWater = "Liquid";
+      } else if (tempMetric >= BOILING_POINT) {
+        stateOfWater = "Gas";
+      }
+    }
+
+    if (validScale) {
+      System.out.print(stateOfWater+".");
+    } else {
+      System.out.print("That's not a valid scale.");
+    }
+
+    System.out.print("\n");
+
  }
 
  /*
@@ -451,6 +497,54 @@ public class ProblemSet3 {
 
  public void months() {
 
+    String simplistMon = "";
+    String numberOfDays = "31";
+    boolean validMonth = false;
+    System.out.print("\n");
+    System.out.print("Enter a month: ");
+    String month = in .next();
+    System.out.print("\n");
+
+    month = month.toUpperCase();
+
+    if (month.equals("JAN") || month.equals("JANU") || month.equals("JANUARY")) {
+      validMonth = true;
+    } else if (month.equals( "FEB")|| month.equals("FEBR")|| month.equals("FEBRUARY")) {
+      validMonth = true;
+      numberOfDays = "28 or 29";
+    } else if (month.equals("MAR")|| month.equals("MARC")|| month.equals("MARCH")) {
+      validMonth = true;
+    } else if (month.equals("APR")|| month.equals("APRI")|| month.equals("APRIL")) {
+      validMonth = true;
+      numberOfDays ="30";
+    } else if (month.equals("MAY")) {
+      validMonth = true;
+    } else if (month.equals("JUN")|| month.equals("JUNE")) {
+      validMonth = true;
+    } else if (month.equals("JUL")|| month.equals("JULY")) {
+      validMonth = true;
+    } else if (month.equals("AUG")|| month.equals("AUGU")|| month.equals("AUGUST")) {
+      validMonth = true;
+    } else if (month.equals("SEP")|| month.equals("SEPT")|| month.equals("SEPTEMBER")) {
+      validMonth = true;
+      numberOfDays = "30";
+    } else if (month.equals("OCT")|| month.equals("OCTO")|| month.equals("OCTOBER")) {
+      validMonth = true;
+    } else if (month.equals("NOV")|| month.equals("NOVE")|| month.equals("NOVEMBER")) {
+      validMonth = true;
+      numberOfDays = "30";
+    } else if (month.equals("DEC")|| month.equals("DECE")|| month.equals("DECEMBER")) {
+      validMonth = true;
+    }
+
+    if (validMonth) {
+      System.out.print(numberOfDays+" days.");
+    } else {
+      System.out.print("That's not a valid month.");
+    }
+
+    System.out.print("\n");
+
  }
 
  /*
@@ -460,6 +554,46 @@ public class ProblemSet3 {
   */
 
  public void salary() {
+    double overtime = 0;
+    double OVERTIME_THRESHOLD = 40;
+    double OVERTIME_MULTIPLIER = 1.5;
+    boolean validHours = false;
+    boolean validWage = false;
+    double earningsThisWeek = 0;
+
+    System.out.print("\n");
+    System.out.print("Wage: ");
+    double wage = in .nextDouble();
+    System.out.print("Hours: ");
+    double hours = in .nextDouble();
+    System.out.print("\n");
+
+    if (wage >= 0) {
+      validWage = true;
+    }
+
+    if (hours >= 0) {
+      validHours = true;
+    }
+
+    if (hours > OVERTIME_THRESHOLD) {
+      overtime = hours - OVERTIME_THRESHOLD;
+      hours = 40;
+    }
+
+    earningsThisWeek += hours * wage + OVERTIME_MULTIPLIER * wage * overtime;
+
+    if (validHours && validWage) {
+      System.out.print("You'll make ");
+      System.out.printf("$%,.2f", earningsThisWeek);
+      System.out.print(" this week.");
+    } else if (!(validWage)) {
+      System.out.print("Your wage must be greater than or equal to $0.00/hour.");
+    } else if (!(validHours)){
+      System.out.print("Your hours must be greater than or equal to 0.0.");
+    }
+
+    System.out.print("\n");
 
  }
 }
